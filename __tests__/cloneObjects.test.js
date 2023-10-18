@@ -1,6 +1,14 @@
 const cloneObjects = require("../katas/cloneObjects")
 
 describe('cloneObjects', () => {
+  test('should return an empty object when given an empty source object', () => {
+    const source = {};
+    const target = {};
+    cloneObjects(target, source);
+
+    expect(target).toEqual({});
+  });
+
   test('should clone an object with primitive properties', () => {
     const source = { name: 'John', age: 30, city: 'New York' };
     const target = {};
@@ -33,13 +41,6 @@ describe('cloneObjects', () => {
     expect(target).toEqual(source);
   });
 
-  test('should return an empty object when given an empty source object', () => {
-    const source = {};
-    const target = {};
-    cloneObjects(target, source);
-
-    expect(target).toEqual({});
-  });
 });
 
 
